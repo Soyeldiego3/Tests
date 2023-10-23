@@ -17,12 +17,16 @@ function App() {
       precio:precio,
       descripcion:descripcion
     }).then(()=>{
-      mostrarDatos();
       alert("Datos Guardados!");
+      mostrarDatos();
     });
   }
 
   const mostrarDatos = ()=>{
+    document.getElementById("nombre").value = "";
+    document.getElementById("precio").value = "";
+    document.getElementById("descripcion").value = "";
+
     axios.get("http://localhost:3001/productos").then((response)=>{
       setProductos(response.data);
     });
@@ -34,24 +38,24 @@ function App() {
         <form>
           <div className='mb-3'>
             <label>Nombre</label>
-            <input type="text" placeholder='Nombre' className='form-control border border-2 border-black' onChange={(event)=>{ setNombre( event.target.value ); }}/>
+            <input type="text" id='nombre' placeholder='Nombre' className='form-control border border-2 border-black' onChange={(event)=>{ setNombre( event.target.value ); }}/>
           </div>
 
           <div className='mb-3'>
             <label>Precio</label>
-            <input type="number" placeholder='Precio' className='form-control border border-2 border-black' onChange={(event)=>{ setPrecio( event.target.value ); }}/>
+            <input type="number" id='precio' placeholder='Precio' className='form-control border border-2 border-black' onChange={(event)=>{ setPrecio( event.target.value ); }}/>
           </div>
 
           <div className='mb-3'>
             <label>Descripcion</label>
-            <input type="text" placeholder='Descripción' className='form-control border border-2 border-black' onChange={(event)=>{ setDescripcion( event.target.value ); }}/>
+            <input type="text" id='descripcion' placeholder='Descripción' className='form-control border border-2 border-black' onChange={(event)=>{ setDescripcion( event.target.value ); }}/>
           </div>
 
-          <button className='btn btn-success' onClick={ agregarDatos }>Guardar</button>
         </form>
+        <button className='btn btn-success' onClick={ agregarDatos }>Guardar</button>
       </div>
 
-      <div className='d-flex justify-content-center align-items-center text-center'>
+      <div className='d-flex justify-content-center align-items-center text-center me-5'>
         <div className='p-3 bg-white border border-2 border-black'>
             <button onClick={mostrarDatos} className='btn btn-info mb-4'>Listar Datos</button>
             <div className='p-3'>

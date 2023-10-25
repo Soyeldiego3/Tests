@@ -7,9 +7,9 @@ import Home from './pages/home';
 import Dashboard from './pages/dashboard';
 import Default from './pages/default';
 import AgregarProducto from './pages/agregarProd';
+import Login from './pages/Login';
 
-
-function App() {
+function App () {
   return (
     <div>
       <Routes>
@@ -18,11 +18,12 @@ function App() {
           <Route path='/' element={<Home/>}></Route>;
           <Route path='dashboard' element={<Dashboard/>}></Route>;
           <Route path='AgregarProducto' element={<AgregarProducto/>}></Route>;
+          <Route path='Login' element={<Login/>}></Route>;
           <Route path='*' element={<Default/>}></Route>;
         </Route>
       </Routes>
     </div>
-  );
+  );  
 }
 
 export default App;

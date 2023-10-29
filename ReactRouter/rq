@@ -1,1 +1,2 @@
-npm install react-router-dom 
+npm install react-router-dom axios bootstrap sweetalert2
+npm install animate.css --save

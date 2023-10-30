@@ -1,6 +1,5 @@
 import tarjetaApp from './componentes/card';
 
-
 function App() {
   return (
     <div>

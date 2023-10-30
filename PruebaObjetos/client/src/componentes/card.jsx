@@ -7,7 +7,7 @@ function crearTarjeta() {
     var nuevaTarjeta = document.createElement('div');
     nuevaTarjeta.className = 'card me-2 ms-2 mb-2 tarjeta';
 
-    if ((document.getElementById("datos").value) != ""){
+    if ((document.getElementById("datos").value) !== ""){
         var tituloTarjeta = document.createTextNode(document.getElementById("titulo").value);
         tituloTarjeta.className = "fs-4"
         var contenidoTarjeta = document.createTextNode(document.getElementById("datos").value);
